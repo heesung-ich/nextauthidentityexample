@@ -11,7 +11,7 @@ export const authConfig = {
         session({ session, user, token }) {
             return session;
         },
-        jwt({ token, user, account, profile, isNewUser }) {
+        jwt({ token, user, account, profile }) {
             return token;
         }
     },
