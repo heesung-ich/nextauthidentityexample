@@ -1,5 +1,4 @@
 import NextAuth, { User } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
 import DuendeIDS6Provider from "next-auth/providers/duende-identity-server6";
 import { authConfig } from "./auth.config";
 
@@ -63,6 +62,11 @@ export const {
 
         return user;
       },
+    }),
+    DuendeIDS6Provider({
+      clientId: "NextAuthClient",
+      clientSecret: "",
+      issuer: "https://localhost:5001",
     }),
   ],
 });
