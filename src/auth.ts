@@ -15,7 +15,7 @@ export const { auth, signIn, signOut } = NextAuth({
     DuendeIDS6Provider({
         clientId: "NextAuthClient",
         clientSecret: "",
-        issuer: "http://localhost:3000",
+        issuer: "https://localhost:5001",
     })
   ],
 });

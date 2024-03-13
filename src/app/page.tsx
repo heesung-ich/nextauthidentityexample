@@ -3,10 +3,6 @@
 import Link from 'next/link';
 
 export default function Home() {
-  const login = async () => {
-
-  };
-
   const api = async () => {
 
   };
@@ -14,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-between p-10">
       <div className="flex justify-between space-x-2">
-        <button id="login" className="bg-gray-100 p-4" onClick={login}>Login</button>
+        <Link href="/login" className="bg-gray-100 p-4">Login</Link>
         <button id="api" className="bg-gray-100 p-4" onClick={api}>Call API</button>
         <Link href="/logout" className="bg-gray-100 p-4">Logout</Link>
 
