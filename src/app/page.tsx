@@ -1,7 +1,6 @@
 "use client";
 
-import { signIn, signOut } from "@/auth";
-import { useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -17,7 +16,9 @@ export default function Home() {
   const api = async () => {};
 
   const logout = async () => {
-    await signOut();
+    try {
+      await signOut();
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -27,7 +28,12 @@ export default function Home() {
   return (
     <main className="flex  min-h-screen items-center justify-between p-10">
       <div className="flex flex-col gap-4 ">
-        <button id="login" className="bg-gray-100 p-4" onClick={login}>
+        <button
+          id="login"
+          className="bg-gray-100 p-4"
+          onClick={login}
+          disabled={!!session}
+        >
           Login
         </button>
         <button id="api" className="bg-gray-100 p-4" onClick={api}>

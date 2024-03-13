@@ -63,10 +63,5 @@ export const {
         return user;
       },
     }),
-    DuendeIDS6Provider({
-      clientId: "NextAuthClient",
-      clientSecret: "",
-      issuer: "https://localhost:5001",
-    }),
   ],
 });
